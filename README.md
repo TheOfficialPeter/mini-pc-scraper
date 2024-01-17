@@ -1,4 +1,4 @@
-#Mini PC Scraper
+# Mini PC Scraper
 
 So I made this python tool ( that you can host on a VPS ) that can be used to scrape all the local (local = south african) online shops for raspberry pi's and arduinos. PLEASE NOTE: This does not scrape all the products and there might be some false positives.
 
