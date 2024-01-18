@@ -1,6 +1,9 @@
 import requests
 from flask import Flask
 from bs4 import BeautifulSoup
+from bokeh.plotting import figure
+from bokeh.resources import CDN
+from bokeh.embed import file_html
 
 app = Flask(__name__)
 
@@ -109,6 +112,15 @@ class Scraper:
 
 scraper = Scraper()
 scraper.test_scraper()
+
+# For testing whether the charts work
+@app.route('/charts')
+def charts():
+    plot = figure()
+    plot.circle([1,2], [3,4])
+
+    html = file_html(plot, CDN, "my plot")
+    return html
 
 @app.route("/takealot")
 def takelot():

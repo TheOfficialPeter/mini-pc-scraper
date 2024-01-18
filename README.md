@@ -13,6 +13,8 @@ I am using Python Flask Server to host the whole project so users can view all t
 - [ ] Finished Scraping for RoboFactory (Still not sure if trusted or not) 
 - [ ] Packed .exe file for easy installation + usage
 - [ ] Added automatic syncing to google sheets (Planned)
+- [ ] Add timed intervals and keeping track of data
+- [ ] Show data visually on endpoints using [Bokeh](https://docs.bokeh.org/en/dev-3.0/docs/user_guide/embed.html)
 
 ## Installation
 
