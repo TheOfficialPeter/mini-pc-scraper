@@ -10,7 +10,7 @@ I am using Python Flask Server to host the whole project so users can view all t
 
 - [x] Finished Scraping for Takealot
 - [x] Finished Scraping for BotShop
-- [ ] Finished Scraping for RoboFactory (Still not sure if trusted or not) 
+- [x] Finished Scraping for RoboFactory (Still not sure if trusted or not) 
 - [ ] Packed .exe file for easy installation + usage
 - [ ] Added automatic syncing to google sheets (Planned)
 - [ ] Add timed intervals and keeping track of data

@@ -105,8 +105,21 @@ class Scraper:
             self.test_result = True
 
         try:
-            pass
-        except:
+            # raspberry pi search query
+            response = requests.get("https://www.robofactory.co.za/search?s=raspberry+pi")
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            products = soup.find_all('article', class_="product-miniature")
+            product_images = [x.find('a', class_="product-thumbnail").find('img')["ata-full-size-image-url"] for x in products]
+            product_names = [x.find('h3', class_="product-title").text for x in products]
+            product_prices = [x.find('span', class_="price").text.replace("R ", "").replace(",", "") for x in products]
+            product_status = [x.find('span', class_="availability-list").text.replace("In Stock - ", "") for x in products]
+
+            products = {k: v for k, v in zip(['product_image', 'product_name', 'product_price', 'product_status'], [product_images, product_names, list(map(float, product_prices)), product_status])} 
+            return products
+            
+        except Exception as e:
+            print(e)
             self.test_result = False
             return None 
 
@@ -146,3 +159,5 @@ def robofactory():
      
     if results == None:
         return "\n[Mini PC Scraper] - [Warning]: Scraper is outdated\n"
+
+    return results
